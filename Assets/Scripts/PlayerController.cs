@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 10f; //Controls velocity multiplier
+    bool collision;
     
    Rigidbody rb; //Tells script there is a rigidbody, we can use variable rb to reference it in further script
 
