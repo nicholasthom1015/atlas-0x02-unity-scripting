@@ -2,23 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rotate : MonoBehaviour
+public class RotateCoin : MonoBehaviour
 {
-    public float rotationsPerMinute = 10.0;
-
-
-     //float angle = 45f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float rotateSpeed;
 
     // Update is called once per frame
     void Update()
     {
-            //transform.Rotate(0,6.0*rotationsPerMinute*Time.deltaTime,0);
-        rotate *= rotationsPerMinute * Time.deltaTime;
-        transform.Rotate(rotate);
+        transform.Rotate(0, rotateSpeed, 0, Space.World);
     }
 }
