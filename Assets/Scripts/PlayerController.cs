@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 10f; //Controls velocity multiplier
     private int score = 0;
+
+    public int health = 5;
     bool collision;
     
     void OnTriggerEnter(Collider other)
@@ -16,6 +18,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Score: " + score); //Displays score
 
             Destroy(other.gameObject); //Removes coins when collected
+        }
+
+        if (other.CompareTag("Trap"))
+        {
+            health--;
+            Debug.Log("Health: " + health); //Displays health
         }
     }
    Rigidbody rb; //Tells script there is a rigidbody, we can use variable rb to reference it in further script
