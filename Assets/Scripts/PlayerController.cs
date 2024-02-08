@@ -5,8 +5,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 10f; //Controls velocity multiplier
+    private int score = 0;
     bool collision;
     
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Pickup"))
+        {
+            score++;
+            Debug.Log("Score: " + score); //Displays score
+
+            Destroy(other.gameObject); //Removes coins when collected
+        }
+    }
    Rigidbody rb; //Tells script there is a rigidbody, we can use variable rb to reference it in further script
 
     // Start is called before the first frame update
